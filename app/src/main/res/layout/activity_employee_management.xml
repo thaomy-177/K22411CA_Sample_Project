@@ -1,82 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <TableRow
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:onClick="do_open_employee_healthcare"
-                    android:layout_weight="1"
-                    android:id="@+id/imgEmployeeHealthcare"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@mipmap/ic_employee_healthcare" />
-
+            <!-- Header -->
+            <TableRow>
                 <TextView
-                    android:onClick="do_open_employee_healthcare"
-                    android:id="@+id/txtEmployeeHealthcare"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/title_employee_healthcare"
-                    android:textAlignment="center"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_weight="1"
-                    android:id="@+id/imgEmployeeSalary"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@mipmap/ic_employee_salary"
-                    tools:ignore="DuplicateIds" />
-
-                <TextView
-                    android:id="@+id/txtEmployeeSalary"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/title_employee_salary"
-                    android:textAlignment="center"
-                    android:textSize="24sp"
+                    android:text="Employee Name"
                     android:textStyle="bold"
-                    tools:ignore="DuplicateIds" />
-            </LinearLayout>
-        </TableRow>
+                    android:padding="8dp" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Department"
+                    android:textStyle="bold"
+                    android:padding="8dp" />
+            </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <!-- 20 Employees -->
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="John Doe" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Healthcare" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Jane Smith" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Finance" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Alice Johnson" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="HR" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Bob Lee" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="IT" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Charlie Kim" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Marketing" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Daisy Ridley" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Sales" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Ethan Hunt" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Security" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fiona Gallagher" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Accounting" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="George Wilson" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Legal" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Hannah Lee" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="IT" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Ian Thomas" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Engineering" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Julia Park" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Design" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Kevin Hart" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Support" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Linda Evans" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Finance" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Michael Brown" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="RD" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Nancy Drew" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="QA" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Oscar Wilde" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Legal" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Paula Abdul" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Entertainment" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Quentin Blake" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Design" android:padding="8dp"/></TableRow>
+            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Rachel Green" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fashion" android:padding="8dp"/></TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
-</LinearLayout>
+        </TableLayout>
+
+    </LinearLayout>
+</ScrollView>
