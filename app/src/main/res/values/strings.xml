@@ -11,15 +11,20 @@
     <string name="title_confirm_exit_cancel">CANCEL</string>
     <string name="title_main_employee">Employee</string>
     <string name="title_main_customer">Customer </string>
-    <string name="title_employee_management">Employee Management</string>
-    <string name="title_ID">ID</string>
-    <string name="title_name_employee">Name</string>
-    <string name="title_email_employee">Email</string>
-    <string name="title_department_employee">Department</string>
     <string name="title_management_employee">Employee Management</string>
     <string name="title_employee_ID">ID</string>
     <string name="title_employee_name">Name</string>
     <string name="title_employee_email">Email</string>
     <string name="title_employee_department">Department</string>
+    <string name="title_employee_healthcare">Healthcare</string>
+    <string name="title_employee_salary">Salary</string>
+    <string name="title_activity_employee_healthcare">Employee Healthcare</string>
+    <string name="title_height">Height</string>
+    <string name="title_weight">Weight</string>
+    <string name="title_calculate">Calculate</string>
+    <string name="title_clear">Clear</string>
+    <string name="title_close">Close</string>
+    <string name="title_product">Product</string>
+    <string name="title_category">Category</string>
 
 </resources>

@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="@android:color/transparent">
+    android:orientation="vertical">
 
-    <LinearLayout
+
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingBottom="16dp"
-            android:text="@string/title_management_employee"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TableLayout
-            android:id="@+id/tableEmployee"
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:stretchColumns="1,2,3"
-            android:shrinkColumns="0,1,2,3"
-            android:background="#20FFFFFF">
+            android:layout_height="match_parent" >
 
-            <!-- Header -->
-            <TableRow android:background="#DDDDDD">
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <TextView
-                    android:padding="8dp"
-                    android:text="@string/title_employee_ID"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:padding="8dp"
-                    android:text="@string/title_employee_name"
-                    android:textStyle="bold" />
+                <ImageView
+                    android:onClick="do_open_employee_healthcare"
+                    android:layout_weight="1"
+                    android:id="@+id/imgEmployeeHealthcare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_employee_healthcare" />
 
                 <TextView
-                    android:padding="8dp"
-                    android:text="@string/title_employee_email"
+                    android:onClick="do_open_employee_healthcare"
+                    android:id="@+id/txtEmployeeHealthcare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/title_employee_healthcare"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:id="@+id/imgEmployeeSalary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_employee_salary"
+                    tools:ignore="DuplicateIds" />
 
                 <TextView
-                    android:padding="8dp"
-                    android:text="@string/title_employee_department"
-                    android:textStyle="bold" />
-            </TableRow>
+                    android:id="@+id/txtEmployeeSalary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/title_employee_salary"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </LinearLayout>
+        </TableRow>
 
-            <!-- 20 Sample Rows -->
-            <TableRow><TextView android:text="1" android:padding="8dp"/><TextView android:text="John Doe" android:padding="8dp"/><TextView android:text="john@example.com" android:padding="8dp"/><TextView android:text="IT" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="2" android:padding="8dp"/><TextView android:text="Alice Smith" android:padding="8dp"/><TextView android:text="alice@example.com" android:padding="8dp"/><TextView android:text="HR" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="3" android:padding="8dp"/><TextView android:text="Bob Johnson" android:padding="8dp"/><TextView android:text="bob@example.com" android:padding="8dp"/><TextView android:text="Finance" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="4" android:padding="8dp"/><TextView android:text="Eve Adams" android:padding="8dp"/><TextView android:text="eve@example.com" android:padding="8dp"/><TextView android:text="Marketing" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="5" android:padding="8dp"/><TextView android:text="David Brown" android:padding="8dp"/><TextView android:text="david@example.com" android:padding="8dp"/><TextView android:text="Sales" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="6" android:padding="8dp"/><TextView android:text="Emma Wilson" android:padding="8dp"/><TextView android:text="emma@example.com" android:padding="8dp"/><TextView android:text="RD" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="7" android:padding="8dp"/><TextView android:text="Michael Green" android:padding="8dp"/><TextView android:text="michael@example.com" android:padding="8dp"/><TextView android:text="Logistics" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="8" android:padding="8dp"/><TextView android:text="Sophia Lee" android:padding="8dp"/><TextView android:text="sophia@example.com" android:padding="8dp"/><TextView android:text="Support" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="9" android:padding="8dp"/><TextView android:text="William Scott" android:padding="8dp"/><TextView android:text="william@example.com" android:padding="8dp"/><TextView android:text="Security" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="10" android:padding="8dp"/><TextView android:text="Olivia King" android:padding="8dp"/><TextView android:text="olivia@example.com" android:padding="8dp"/><TextView android:text="Legal" android:padding="8dp"/></TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-            <TableRow><TextView android:text="11" android:padding="8dp"/><TextView android:text="Liam Carter" android:padding="8dp"/><TextView android:text="liam@example.com" android:padding="8dp"/><TextView android:text="Procurement" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="12" android:padding="8dp"/><TextView android:text="Ava Martinez" android:padding="8dp"/><TextView android:text="ava@example.com" android:padding="8dp"/><TextView android:text="Admin" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="13" android:padding="8dp"/><TextView android:text="Noah Kim" android:padding="8dp"/><TextView android:text="noah@example.com" android:padding="8dp"/><TextView android:text="Support" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="14" android:padding="8dp"/><TextView android:text="Isabella Wong" android:padding="8dp"/><TextView android:text="isabella@example.com" android:padding="8dp"/><TextView android:text="HR" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="15" android:padding="8dp"/><TextView android:text="James Patel" android:padding="8dp"/><TextView android:text="james@example.com" android:padding="8dp"/><TextView android:text="IT" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="16" android:padding="8dp"/><TextView android:text="Charlotte Nguyen" android:padding="8dp"/><TextView android:text="charlotte@example.com" android:padding="8dp"/><TextView android:text="Marketing" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="17" android:padding="8dp"/><TextView android:text="Lucas Brown" android:padding="8dp"/><TextView android:text="lucas@example.com" android:padding="8dp"/><TextView android:text="RD" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="18" android:padding="8dp"/><TextView android:text="Mia Clark" android:padding="8dp"/><TextView android:text="mia@example.com" android:padding="8dp"/><TextView android:text="Design" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="19" android:padding="8dp"/><TextView android:text="Henry Lopez" android:padding="8dp"/><TextView android:text="henry@example.com" android:padding="8dp"/><TextView android:text="Logistics" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:text="20" android:padding="8dp"/><TextView android:text="Grace Hall" android:padding="8dp"/><TextView android:text="grace@example.com" android:padding="8dp"/><TextView android:text="Legal" android:padding="8dp"/></TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-        </TableLayout>
-    </LinearLayout>
-</ScrollView>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
+</LinearLayout>
