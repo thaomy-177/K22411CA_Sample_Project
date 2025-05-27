@@ -8,7 +8,7 @@ public class ListCustomer {
     public ListCustomer() {
         customers=new ArrayList<>();
     }
-    public  void addCustomer(Customer c)
+    public void addCustomer (Customer c)
     {
         customers.add(c);
     }
@@ -22,15 +22,28 @@ public class ListCustomer {
     }
     public void generate_sample_dataset()
     {
-        addCustomer(new Customer(1,"Teo","teo@gmail.com","0981234312","teo","123"));
-        addCustomer(new Customer(2,"Ty","ty@gmail.com","0901234456","ty","456"));
-        addCustomer(new Customer(3,"Bin","bin@gmail.com","0921234432","bin","456"));
-        addCustomer(new Customer(4,"Bo","bo@gmail.com","09553334456","bo","456"));
-        addCustomer(new Customer(5,"Tun","tun@gmail.com","097123463","tun","456"));
-        addCustomer(new Customer(6,"Mun","mun@gmail.com","0901234234","mun","456"));
-        addCustomer(new Customer(7,"hoa","hoa@gmail.com","0941239956","hoa","456"));
-        addCustomer(new Customer(8,"hong","hong@gmail.com","0911234777","hong","456"));
-        addCustomer(new Customer(9,"hue","hue@gmail.com","0921234888","hue","456"));
-        addCustomer(new Customer(10,"cuc","cuc@gmail.com","0921234666","cuc","456"));
+        addCustomer(new Customer(1, "Linh", "linhtran@example.com", "0911223344", "linhtran", "abc123"));
+        addCustomer(new Customer(2, "Hùng", "hungvo@example.com", "0988776655", "hungvo", "abc123"));
+        addCustomer(new Customer(3, "Mai", "mainguyen@example.com", "0933112233", "mainguyen", "abc123"));
+        addCustomer(new Customer(4, "Tú", "tudang@example.com", "0909887766", "tudang", "abc123"));
+        addCustomer(new Customer(5, "An", "anpham@example.com", "0966554433", "anpham", "abc123"));
+        addCustomer(new Customer(6, "Lan", "lanle@example.com", "0977445566", "lanle", "abc123"));
+        addCustomer(new Customer(7, "Phong", "phongnguyen@example.com", "0944332211", "phongnguyen", "abc123"));
+        addCustomer(new Customer(8, "Nhung", "nhungvo@example.com", "0955667788", "nhungvo", "abc123"));
+        addCustomer(new Customer(9, "Quang", "quangtruong@example.com", "0922446688", "quangtruong", "abc123"));
+        addCustomer(new Customer(10, "Yến", "yenho@example.com", "0933445599", "yenho", "abc123"));
+    }
+    public boolean isExisting(Customer c)
+    {
+        for(Customer cus: customers)
+        {
+            if(cus.getId()== c.getId() ||
+                    cus.getPhone().equals(c.getPhone()) ||
+                    cus.getEmail().equalsIgnoreCase(c.getEmail()) ||
+                    cus.getUsername().equalsIgnoreCase(c.getUsername())
+            )
+                return true;
+        }
+        return false;
     }
 }

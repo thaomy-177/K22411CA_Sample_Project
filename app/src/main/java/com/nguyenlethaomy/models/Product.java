@@ -1,24 +1,19 @@
 package com.nguyenlethaomy.models;
 
 import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 
-public class Product implements Serializable {
+public class Product implements Serializable{
     private int id;
     private String name;
     private int quantity;
     private double price;
-    private int cateId;
+    private int cateid;
+
+    private int image_id;
 
     public Product() {
-    }
-
-    public Product(int id, String name, int quantity, double price, int cateId) {
-        this.id = id;
-        this.name = name;
-        this.quantity = quantity;
-        this.price = price;
-        this.cateId = cateId;
     }
 
     public int getId() {
@@ -53,17 +48,47 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public int getCateId() {
-        return cateId;
+    public int getCateid() {
+        return cateid;
     }
 
-    public void setCateId(int cateId) {
-        this.cateId = cateId;
+    public void setCateid(int cateid) {
+        this.cateid = cateid;
+    }
+
+    public int getImage_id() {
+        return image_id;
+    }
+
+    public void setImage_id(int image_id) {
+        this.image_id = image_id;
+    }
+
+    public Product(int id, String name, int quantity, double price, int cateid, int image_id) {
+        this.id = id;
+        this.name = name;
+        this.quantity = quantity;
+        this.price = price;
+        this.cateid = cateid;
+        this.image_id = image_id;
+    }
+
+    public Product(int id, String name, int quantity, double price, int image_id) {
+        this.id = id;
+        this.name = name;
+        this.quantity = quantity;
+        this.price = price;
+        this.image_id = image_id;
     }
 
     @NonNull
     @Override
     public String toString() {
-        return id + " - " + name + " | Qty: " + quantity + " | Price: " + price + " | Category ID: " + cateId;
+        return id + " - " + name +
+                "\nQuantity: " + quantity +
+                "\nPrice: " + price +
+                "\nCategory ID: " + cateid;
     }
+
 }
+

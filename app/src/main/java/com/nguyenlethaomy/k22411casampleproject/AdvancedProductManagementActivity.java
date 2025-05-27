@@ -1,7 +1,6 @@
 package com.nguyenlethaomy.k22411casampleproject;
 
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -10,20 +9,19 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.nguyenlethaomy.models.Category;
-import com.nguyenlethaomy.models.ListCategory;
+import com.nguyenlethaomy.adapters.ProductAdapter;
+import com.nguyenlethaomy.models.ListProduct;
 
 
-public class CategoryManagementActivity extends AppCompatActivity {
-    ListView lvCategory;
-    ArrayAdapter<Category> adapter;
-    ListCategory lc = new ListCategory();
+public class AdvancedProductManagementActivity extends AppCompatActivity {
 
+    ListView lvProduct;
+    ProductAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_category_management);
+        setContentView(R.layout.activity_advanced_product_management);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -33,12 +31,13 @@ public class CategoryManagementActivity extends AppCompatActivity {
     }
 
     private void addViews() {
-        lvCategory = findViewById(R.id.lvCategory);
-        adapter = new ArrayAdapter<>(
-                CategoryManagementActivity.this,
-                android.R.layout.simple_list_item_1);
-        lc.generate_sample_dataset();
-        adapter.addAll(lc.getCategories());
-        lvCategory.setAdapter(adapter);
+        lvProduct=findViewById(R.id.lvProduct);
+        adapter=new ProductAdapter(AdvancedProductManagementActivity.this,
+                R.layout.item_advanced_product);
+        lvProduct.setAdapter(adapter);
+
+        ListProduct lp=new ListProduct();
+        lp.generate_sample_dataset();
+        adapter.addAll(lp.getProducts());
     }
 }

@@ -4,14 +4,6 @@ public class BMIStatus {
     private double BMI;
     private String description;
 
-    public BMIStatus() {
-    }
-
-    public BMIStatus(double BMI, String description) {
-        this.BMI = BMI;
-        this.description = description;
-    }
-
     public double getBMI() {
         return BMI;
     }
@@ -25,6 +17,15 @@ public class BMIStatus {
     }
 
     public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public BMIStatus(double BMI) {
+        this.BMI = BMI;
+    }
+
+    public BMIStatus(double BMI, String description) {
+        this.BMI = BMI;
         this.description = description;
     }
 }

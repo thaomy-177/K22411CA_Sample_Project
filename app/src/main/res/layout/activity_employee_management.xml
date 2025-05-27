@@ -3,80 +3,358 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F8F8F8">
 
     <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        tools:context=".EmployeeManagementActivity">
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- Header -->
-            <TableRow>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Employee Name"
-                    android:textStyle="bold"
-                    android:padding="8dp" />
+            <!-- Row 1 -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Department"
-                    android:textStyle="bold"
-                    android:padding="8dp" />
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:onClick="do_open_employee_healthcare"
+                        android:id="@+id/imgHealthcare"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@mipmap/ic_doctor" />
+
+                    <TextView
+                        android:id="@+id/txtHealthcare"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_healthcare"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgEmployeeSalary"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@mipmap/ic_employee_salary" />
+
+                    <TextView
+                        android:id="@+id/txtEmployeeSalary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_em_salary"
+                        android:textAlignment="center" />
+                </LinearLayout>
             </TableRow>
 
-            <!-- 20 Employees -->
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="John Doe" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Healthcare" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Jane Smith" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Finance" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Alice Johnson" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="HR" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Bob Lee" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="IT" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Charlie Kim" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Marketing" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Daisy Ridley" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Sales" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Ethan Hunt" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Security" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fiona Gallagher" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Accounting" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="George Wilson" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Legal" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Hannah Lee" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="IT" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Ian Thomas" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Engineering" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Julia Park" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Design" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Kevin Hart" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Support" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Linda Evans" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Finance" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Michael Brown" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="RD" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Nancy Drew" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="QA" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Oscar Wilde" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Legal" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Paula Abdul" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Entertainment" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Quentin Blake" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Design" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Rachel Green" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fashion" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="John Doe" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Healthcare" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Jane Smith" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Finance" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Alice Johnson" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="HR" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Bob Lee" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="IT" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Charlie Kim" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Marketing" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Daisy Ridley" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Sales" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Ethan Hunt" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Security" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fiona Gallagher" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Accounting" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="George Wilson" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Legal" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Hannah Lee" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="IT" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Ian Thomas" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Engineering" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Julia Park" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Design" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Kevin Hart" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Support" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Linda Evans" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Finance" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Michael Brown" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="RD" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Nancy Drew" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="QA" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Oscar Wilde" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Legal" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Paula Abdul" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Entertainment" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Quentin Blake" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Design" android:padding="8dp"/></TableRow>
-            <TableRow><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Rachel Green" android:padding="8dp"/><TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Fashion" android:padding="8dp"/></TableRow>
+            <!-- Row 2 -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgAttendance"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@mipmap/ic_employee" />
+
+                    <TextView
+                        android:id="@+id/txtAttendance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="fingerprint attendance"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgTraining"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@mipmap/ic_employee" />
+
+                    <TextView
+                        android:id="@+id/txtTraining"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Training"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </TableRow>
+
+            <!-- Row 3 -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgLeave"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@mipmap/ic_employee" />
+
+                    <TextView
+                        android:id="@+id/txtLeave"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nghỉ phép"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@mipmap/ic_employee" />
+
+                    <TextView
+                        android:id="@+id/txtProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Employee Profile"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </TableRow>
+            <!-- Thêm vào sau Row 3 -->
+            <!-- Row 4 -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgBonus"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@mipmap/ic_employee" />
+
+                    <TextView
+                        android:id="@+id/txtBonus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Thưởng"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgPenalty"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@mipmap/ic_employee" />
+
+                    <TextView
+                        android:id="@+id/txtPenalty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Phạt"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </TableRow>
+
+            <!-- Row 5 -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgShift"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@mipmap/ic_employee" />
+
+                    <TextView
+                        android:id="@+id/txtShift"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ca làm"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgTeam"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@mipmap/exit" />
+
+                    <TextView
+                        android:id="@+id/txtTeam"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Đội nhóm"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </TableRow>
+
+            <!-- Row 6 -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgFeedback"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@mipmap/ic_employee" />
+
+                    <TextView
+                        android:id="@+id/txtFeedback"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Phản hồi"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgSettings"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@mipmap/exit" />
+
+                    <TextView
+                        android:id="@+id/txtSettings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cài đặt"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </TableRow>
+
+            <!-- Row 7 -->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgLogout"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@mipmap/exit" />
+
+                    <TextView
+                        android:id="@+id/txtLogout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Đăng xuất"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgSupport"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@mipmap/ic_doctor" />
+
+                    <TextView
+                        android:id="@+id/txtSupport"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hỗ trợ"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </TableRow>
+
 
         </TableLayout>
-
     </LinearLayout>
 </ScrollView>

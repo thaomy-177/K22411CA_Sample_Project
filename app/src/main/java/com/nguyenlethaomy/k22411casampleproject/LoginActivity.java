@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     private void addViews() {
         edtUserName = findViewById(R.id.edtUserName);
         edtPassword = findViewById(R.id.edtPassword);
-        chkSaveLogin = findViewById(R.id.chkSaveLoginInfor);
+        chkSaveLogin = findViewById(R.id.chkSaveLoginInfo);
     }
 
     public void do_login(View view) {

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,20 +14,20 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-
     ImageView imgEmployee;
     TextView txtEmployee;
-
     ImageView imgCustomer;
     TextView txtCustomer;
-
-    // Khai báo cho Product Management
-    ImageView imgProduct;
-    TextView txtProduct;
-
-    // Khai báo cho Category Management
     ImageView imgCategory;
     TextView txtCategory;
+    ImageView imgProduct;
+    TextView txtProduct;
+    ImageView imgAdvancedProduct;
+    TextView txtAdvancedProduct;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,99 +42,96 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
-
     private void addEvents() {
-        // Sự kiện cho Employee Management
-        imgEmployee.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openEmployeeManagementActivity();
-            }
-        });
-        txtEmployee.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openEmployeeManagementActivity();
-            }
+        // Employee
+        imgEmployee.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Đã bấm ảnh nhân viên", Toast.LENGTH_SHORT).show();
+            openEmployeeManagementActivity();
         });
 
-        // Sự kiện cho Customer Management
-        imgCustomer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openCustomerManagementActivity();
-            }
-        });
-        txtCustomer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openCustomerManagementActivity();
-            }
+        txtEmployee.setOnClickListener(v -> {
+            openEmployeeManagementActivity();
         });
 
-        // Sự kiện cho Product Management (MỚI)
-        imgProduct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openProductManagementActivity();
-            }
-        });
-        txtProduct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openProductManagementActivity();
-            }
+        // Customer
+        imgCustomer.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Đã bấm ảnh khách hàng", Toast.LENGTH_SHORT).show();
+            openCustomerManagementActivity();
         });
 
-        // Sự kiện cho Category Management (MỚI)
-        imgCategory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openCategoryManagementActivity();
-            }
+        txtCustomer.setOnClickListener(v -> {
+            openCustomerManagementActivity();
         });
-        txtCategory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openCategoryManagementActivity();
-            }
+        // Customer
+        imgCategory.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Đã bấm ảnh khách hàng", Toast.LENGTH_SHORT).show();
+            openCategoryManagementActivity();
         });
+
+        txtCategory.setOnClickListener(v -> {
+            openCategoryManagementActivity();
+        });
+        // Customer
+        imgProduct.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Đã bấm ảnh khách hàng", Toast.LENGTH_SHORT).show();
+            openProductManagementActivity();
+        });
+
+        txtProduct.setOnClickListener(v -> {
+            openProductManagementActivity();;
+        });
+        // Advanced Product
+        imgAdvancedProduct.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Đã bấm ảnh khách hàng", Toast.LENGTH_SHORT).show();
+            openAdvancedProductManagementActivity();
+        });
+
+        txtAdvancedProduct.setOnClickListener(v -> {
+            openAdvancedProductManagementActivity();;
+        });
+
+
     }
 
     private void addViews() {
-        imgEmployee = findViewById(R.id.imgEmployee);
-        txtEmployee = findViewById(R.id.txtEmployee);
-        imgCustomer = findViewById(R.id.imgCustomer);
-        txtCustomer = findViewById(R.id.txtCustomer);
-
-        // Ánh xạ cho Product Management (MỚI)
-        imgProduct = findViewById(R.id.imgProduct);
-        txtProduct = findViewById(R.id.txtProduct);
-
-        // Ánh xạ cho Category Management (MỚI)
-        imgCategory = findViewById(R.id.imgCategory);
-        txtCategory = findViewById(R.id.txtCategory);
+        imgEmployee=findViewById(R.id.imgEmployee);
+        txtEmployee=findViewById(R.id.txtEmployee);
+        imgCustomer=findViewById(R.id.imgCustomer);
+        txtCustomer=findViewById(R.id.txtCustomer);
+        imgCategory=findViewById(R.id.imgCategory);
+        txtCategory=findViewById(R.id.txtCategory);
+        imgProduct=findViewById(R.id.imgProduct);
+        txtProduct=findViewById(R.id.txtProduct);
+        imgAdvancedProduct=findViewById(R.id.imgAdvancedProduct);
+        txtAdvancedProduct=findViewById(R.id.txtAdvancedProduct);
     }
-
-    private void openEmployeeManagementActivity() {
+    private void openEmployeeManagementActivity()
+    {
         Intent intent = new Intent(MainActivity.this, EmployeeManagementActivity.class);
         startActivity(intent);
     }
-
-    private void openCustomerManagementActivity() {
+    private void openCustomerManagementActivity()
+    {
         Intent intent = new Intent(MainActivity.this, CustomerManagementActivity.class);
         startActivity(intent);
     }
-
-    // Phương thức mở Product Management Activity (MỚI)
-    private void openProductManagementActivity() {
-        Intent intent = new Intent(MainActivity.this, ProductManagementActivity.class);
-        startActivity(intent);
-    }
-
-    // Phương thức mở Category Management Activity (MỚI)
-    private void openCategoryManagementActivity() {
+    private void openCategoryManagementActivity()
+    {
         Intent intent = new Intent(MainActivity.this, CategoryManagementActivity.class);
         startActivity(intent);
     }
+    private void openProductManagementActivity()
+    {
+        Intent intent = new Intent(MainActivity.this, ProductManagementActivity.class);
+        startActivity(intent);
+    }
+    private void openAdvancedProductManagementActivity()
+    {
+        Intent intent = new Intent(MainActivity.this, AdvancedProductManagementActivity.class);
+        startActivity(intent);
+    }
+
+
+
+
 }

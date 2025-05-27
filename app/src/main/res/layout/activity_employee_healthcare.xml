@@ -9,22 +9,19 @@
     tools:context=".EmployeeHealthcareActivity">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title_activity_employee_healthcare"
+        android:text="@string/title_employee_healthcare"
         android:textAlignment="center"
-        android:textColor="#673AB7"
-        android:textSize="24sp"
+        android:textColor="#F41212"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title_height"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:text="@string/title_height" />
 
     <EditText
         android:id="@+id/edtHeight"
@@ -34,12 +31,10 @@
         android:inputType="number" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title_weight"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:text="@string/title_weight" />
 
     <EditText
         android:id="@+id/edtWeight"
@@ -54,32 +49,33 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnCalculate"
+            android:id="@+id/btn_cal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/title_calculate" />
 
         <Button
-            android:id="@+id/btnClear"
+            android:id="@+id/btn_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/title_clear" />
 
         <Button
-            android:id="@+id/btnClose"
+            android:id="@+id/btn_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/title_close" />
+            android:text="@string/title_exit_close" />
+
     </LinearLayout>
 
     <TextView
-        android:id="@+id/txtResult"
+        android:id="@+id/txtResults"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ADD97E"
+        android:background="#96C2EB"
+        android:textColorHighlight="#99771D"
         android:textSize="24sp" />
-
 </LinearLayout>

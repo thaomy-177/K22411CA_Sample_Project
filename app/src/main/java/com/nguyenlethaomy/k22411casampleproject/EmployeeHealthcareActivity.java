@@ -1,5 +1,7 @@
 package com.nguyenlethaomy.k22411casampleproject;
 
+
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,11 +17,20 @@ import androidx.core.view.WindowInsetsCompat;
 import com.nguyenlethaomy.utils.BMIStatus;
 import com.nguyenlethaomy.utils.HealthCare;
 
+
 public class EmployeeHealthcareActivity extends AppCompatActivity {
-EditText edtHeight,edtWeight;
-Button btnCalculate,btnClear,btnClose;
-TextView txtResult;
+
+    EditText edtHeight;
+    EditText edtWeight;
+
+    Button btn_cal;
+    Button btn_clear;
+    Button btn_close;
+
+    TextView txtResults;
+
     View.OnClickListener myClick;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,43 +46,47 @@ TextView txtResult;
     }
 
     private void addEvents() {
-        myClick = new View.OnClickListener() {
+        myClick=new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if (view.equals(btnCalculate)) {
-                    // nút Calculate đang dùng sự kiện
-                    double h = Double.parseDouble(edtHeight.getText().toString());
-                    double w = Double.parseDouble(edtWeight.getText().toString());
-                    BMIStatus bmiStatus = HealthCare.calculate_bmi(h, w);
-                    txtResult.setText(bmiStatus.getBMI() + " => " + bmiStatus.getDescription());
-
+            public void onClick(View v) {
+                //xử lí sự kiện chi tiết trong này
+                if(v.equals(btn_cal))
+                {
+                    //nút Calculate được dùng sự kiện
+                    double h=Double.parseDouble(edtHeight.getText().toString());
+                    double w=Double.parseDouble(edtWeight.getText().toString());
+                    BMIStatus bmiStatus= HealthCare.calculate_bmi(h,w);
+                    txtResults.setText(bmiStatus.getBMI()+"=>"+bmiStatus.getDescription());
                 }
-                else if (view.equals(btnClear)) {
-                    // Nút Clear đang dùng sự kiện
+                else if (v.equals(btn_clear))
+                {
+                    //nút CLear đang dùng sự kiện
                     edtHeight.setText("");
                     edtWeight.setText("");
-                    txtResult.setText("");
+                    txtResults.setText("");
                     edtHeight.requestFocus();
+
                 }
-                else if (view.equals(btnClose)) {
-                    // Nút Cancel đang dùng sự kiện
+                else if(v.equals(btn_close))
+                {
+                    //nút Cancel đang dùng sự kiện
                     finish();
                 }
             }
-            };
-        // gán chia sẻ chung sự kiện:
-        btnCalculate.setOnClickListener(myClick);
-        btnClear.setOnClickListener(myClick);
-        btnClose.setOnClickListener(myClick);
-
+        };
+        //gán chia sẻ chung sự kiện:
+        btn_cal.setOnClickListener(myClick);
+        btn_clear.setOnClickListener(myClick);
+        btn_close.setOnClickListener(myClick);
     }
 
     private void addViews() {
-        txtResult = findViewById(R.id.txtResult);
-        edtHeight = findViewById(R.id.edtHeight);
-        edtWeight = findViewById(R.id.edtWeight);
-        btnCalculate = findViewById(R.id.btnCalculate);
-        btnClear = findViewById(R.id.btnClear);
-        btnClose = findViewById(R.id.btnClose);
+        txtResults=findViewById(R.id.txtResults);
+        edtHeight=findViewById(R.id.edtHeight);
+        edtWeight=findViewById(R.id.edtWeight);
+        btn_cal=findViewById(R.id.btn_cal);
+        btn_clear=findViewById(R.id.btn_clear);
+        btn_close=findViewById(R.id.btn_close);
+
     }
 }
